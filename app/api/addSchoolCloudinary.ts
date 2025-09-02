@@ -26,6 +26,8 @@ export default async function handler(
   form.parse(req, async (err, fields, files) => {
     if (err) return res.status(500).json({ message: "Form parse error" });
     try {
+      // disable-next-line @typescript-eslint
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const { name, address, city, state, contact, email_id } = fields as any;
       let imageUrl = "";
 
@@ -39,7 +41,7 @@ export default async function handler(
         try {
           fs.unlinkSync(file.filepath);
         } catch (e) {
-          /* ignore */
+          console.log("Temp file deletion error:", e);
         }
       }
 

@@ -62,7 +62,6 @@ export default function AddSchool() {
   </h1>
 
   <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-    {/* School Name */}
     <div>
       <label className="block text-sm font-medium text-gray-700 mb-1">
         School Name
@@ -77,7 +76,6 @@ export default function AddSchool() {
       )}
     </div>
 
-    {/* Address */}
     <div>
       <label className="block text-sm font-medium text-gray-700 mb-1">
         Address
